@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="company" content="广州原真原电子商务有限公司">
+<meta name="keywords" content="土特产，饮食，健康，文化，品质，保真">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection"  content="telephone=no">
+<meta name="format-detection" content="email=no"/>
+<title>源真原味我的购物车</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/normal.css">
+</head>
+<body>
+	<div class="head">
+		<div class="return">
+			<img src="images/return.png">
+		</div>
+	</div>
+	<div class="main">
+		<div class="content">
+			<ul id="shop_car">
+            </ul>
+		</div>
+		<div class="extraInfo"></div>
+		<div class="address">
+			<div class="addTitle">收获地址</div>
+			<div class="addName">
+				<i>黄钰彬</i> <span class="phoneNum">156****8780</span>
+			</div>
+			<div class="addInfo">广东省广州市番禺区大学城华南师范大学1栋123</div>
+			<div class="addMore">展开更多收获地址 ∨</div>
+		</div>
+		<div class="amount">
+			总计：<span class="amountMoney" id="amountMoney">139</span> 元
+		</div>
+		<div class="payBtn" onclick="payClick()">微信支付</div>
+	</div>
+	<div class="loading">正在玩命加载中...</div>
+	<div id="modalDiv">
+    </div>
+    <div id="modal-delete-box">
+    	<div class="warnMsg">
+			<span>确定要删除这件商品吗？</span>    		
+    	</div>
+    	<div class="doButton">
+    		<button class="no" id= "no" >取消</button>
+    		<button class="ok" id = "ok">确定</button>
+    	</div>
+    </div>
+    <div id="modal-pay-box">
+    	<div class="warnMsg">
+			<span>支付情况模拟</span>    		
+    	</div>
+    	<div class="doButton">
+	    	<button class="ok" id="pay_success">
+	    		<span>支付成功</span>
+	    	</button>
+	    	<button class="no" id="pay_fail">
+	    		<span>支付失败</span>
+	    	</button>
+    	</div>
+    </div>
+    <div id="modal-no-check-box">
+    	<div class="no-check">
+			<span>请勾选支付的商品</span>    		
+    	</div>
+    </div>
+    <script type="text/javascript">
+        var data = {
+        	//支付是否成功标志，0：失败，1：成功
+        	commit:1,
+        	//需要加载的商品
+        	goods: {
+				"000000": { check:0, name: "松子", price: 199,  num: 3, size: "5斤/箱", price_del: 120},
+				"000001": { check:0, name: "榛子", price: 299,  num: 6, size: "5斤/箱", price_del: 120},
+				"000002": { check:0, name: "瓜子", price: 949,  num: 1, size: "5斤/箱", price_del: 120},
+				"000003": { check:0, name: "奶酥", price: 99,  num: 7, size: "5斤/箱", price_del: 120},
+				"000004": { check:1, name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120}
+			}
+		};
+    	//对模态框进行加载
+    	function openNewDiv(e) {
+    		var self = this;
+            var windowHeight=document.body.scrollHeight;
+            var no = document.getElementById("no");
+            var ok = document.getElementById("ok");
+            var id = e.id;
+            var name = data.goods[id].name;
+            console.log("name",name);
+            var goods_number = data.goods;
+            var modal = document.getElementById("modalDiv");
+            var modal_delete_box = document.getElementById("modal-delete-box");
+            modal.style.display = "block";
+            modal.style.height = windowHeight + "px";
+            //设置其透明度为40%
+            modal.style.filter="alpha(opacity=30)";
+            modal.style.opacity="0.40";
+            modal_delete_box.style.display = "block";
+            no.onclick = function() {
+				document.getElementById("modalDiv").style.display="none";
+	            document.getElementById("modal-delete-box").style.display="none";
+            };
+            ok.onclick = function() {
+
+            	document.getElementById("modalDiv").style.display="none";
+	            document.getElementById("modal-delete-box").style.display="none";
+	            delete data.goods[id];
+	            self.htmlAppend();
+            }
+
+        }
+        //判断是否对商品进行勾选，并实现动态加载修改check-box的颜色
+        function selectItem(e) {
+        	// console.log(e.id);
+        	var self = this;
+       		var id = e.id;
+        	if(data.goods[id].check == 1)
+        	{
+        		data.goods[id].check = 0;
+        		console.log(data.goods[id].check);
+        		self.htmlAppend();
+        	}
+        	else
+        	{
+        		data.goods[id].check = 1;
+        		console.log(data.goods[id].check);
+        		self.htmlAppend();
+        	}
+        }
+        //通过id名来获取DOM
+        function get(id) {
+			return document.getElementById(id);
+		}
+		//通过获取的json数据动态地加载列表
+		function htmlList() {
+			var json = data.goods, html = "";
+			for (id in json) {
+				html += '<li class="ui-list-item">' + 
+					'<div class="ui-list-item-inner">'+
+						'<div class="item-select" >' + 
+							'<div class="item-box" id="' + id + '" onclick = "javascript:selectItem(this);">' + 
+							'</div>' +
+						'</div>' + 
+						'<div  class="ui-list-item-thumb">' +
+							'<img src = "images/pro-img.jpg" data-brandlazy="true" style="display:inline;">' +
+						'</div>' +
+						'<div class="ui-list-item-info">' +
+							'<div class="meta">' +
+								'<h4 class="title">' + json[id].name + '</h4>' +
+								'<p>' + '规格：' + json[id].size + '</p>' +
+							'</div>' +
+							'<div class="stock clearfix">' +
+								'<a class="ui-button addBtn" id="' + id + '" rel="'+ (json[id].num+1) +'">' +
+									'<img src="images/add.png">' +
+								'</a>' +
+								'<span>' + json[id].num + '</span>' +
+								'<input class="amount-num" type="text" readonly="readonly" value="'+ json[id].num +'" name="num" id="'+ id + '">' +
+								'<a class="ui-button moveBtn" id="' + id +'" rel="'+ (json[id].num-1) +'">' +
+									'<img src = "images/move.png">' +
+								'</a>' +
+							'</div>' +
+							'<div class="close" onclick="openNewDiv(this)" id="' + id + '">' +
+								'<img src = "images/del.png">' +
+							'</div>' +
+							'<div  class="price">' +
+								'<span class="original-price">' + '￥' +json[id].price + '</span>' +
+								'<del>' + '￥' + json[id].price_del +'</del>'
+							'</div>' +
+						'</div>' +
+					'</div>' +
+				'</li>';
+			}
+			return html;
+		}
+		//对列表中的DOM的事件进行操作
+		function eventBind() {
+			var self = this;
+			var oA = document.getElementsByTagName("a"), oA_length = oA.length;
+			var oInput = document.getElementsByTagName("input"), oInput_length = oInput.length;		
+			for (var i=0; i<oA_length; i+=1) {
+				oA[i].onclick = function() {
+					var id = this.id, num = parseInt(this.rel, 10) || 0;
+					if(num >= 0){
+						data.goods[id].num = num;
+						self.htmlAppend();
+					}
+					return false;						
+				};
+			}
+				
+			for (var i=0; i<oInput_length; i+=1) {
+				oInput[i].onchange = function() {
+					var id = this.id, num = parseInt(this.value, 10) || 0;
+					if(num >= 0){
+						data.goods[id].num = num;
+						self.htmlAppend();
+					}
+					return false;
+				};
+			}
+			return this;
+		}
+
+		//添加列表选项到html里面
+		function htmlAppend() {
+			get("shop_car").innerHTML = this.htmlList();
+			addMoney();
+			var item = getByClassArray("item-box");
+			var item_length = item.length;
+			for(var i = 0; i < item_length; i += 1) {
+				var id = item[i].id; 
+				if(data.goods[id].check == 0)
+				{
+					item[i].style.backgroundColor = "#" + "ffffff";
+				}
+				else
+				{
+					item[i].style.backgroundColor = "#" + "7bbd24";
+				}
+			}
+			eventBind();
+			return this;
+		}
+		//支付按钮模拟的事件
+		function payClick() {
+			/*
+	        传递一个变量判断是否支付成功
+	        并且把json的数据传递  
+	        */
+			var windowHeight=document.body.scrollHeight;
+			var modal = document.getElementById("modalDiv");
+			var modal_pay_box = document.getElementById("modal-pay-box");
+			var success = document.getElementById("pay_success");
+			var fail = document.getElementById("pay_fail");
+			var no_select = document.getElementById("modal-no-check-box");
+			function autoDimissModal() {
+				modal.style.display = "none";
+				no_select.style.display = "none";
+			}
+			var isSelect = selectItemDepend();
+			if(isSelect)
+			{
+				modal.style.display = "block";
+	            modal.style.height = windowHeight + "px";
+	            //设置其透明度为40%
+	            modal.style.filter="alpha(opacity=40)";
+	            modal.style.opacity="0.40";
+				modal_pay_box.style.display = "block";
+				success.onclick = function(){
+					document.getElementById("modalDiv").style.display="none";
+		            document.getElementById("modal-pay-box").style.display="none";
+		            data.commit = 1;
+		            console.log(data.commit);
+				};
+				fail.onclick = function() {
+					document.getElementById("modalDiv").style.display="none";
+		            document.getElementById("modal-pay-box").style.display="none";
+		            data.commit = 0;
+		            console.log(data.commit);
+				};
+			}
+			else
+			{
+	            //设置其透明度为40%
+	            no_select.style.filter="alpha(opacity=70)";
+	            no_select.style.opacity="0.70";
+				no_select.style.display = "block";
+				var t=setTimeout("document.getElementById('modal-no-check-box').style.display='none',document.getElementById('modalDiv').style.display='none'",1000);
+			}
+		}
+		//通过class名来获取DOM
+		function getByClass(sClass) {
+		    var aResult=[];
+		    var aEle=document.getElementsByTagName('*');
+		    for(var i=0;i<aEle.length;i++){
+		       /*当className相等时添加到数组中*/
+		       	if(aEle[i].className==sClass) {
+		            aResult.push(aEle[i]);
+		        }
+		    }
+	    	return aResult;
+		};
+		//通过class名来获取DOM的数组
+		function getByClassArray(sClass){
+		    var aResult=[];
+		    var aEle=document.getElementsByTagName('*');
+		    /*正则模式*/
+		    var re=new RegExp("\\b" + sClass + "\\b","g");
+		    for(var i=0;i<aEle.length;i++){
+		        /*字符串search方法判断是否存在匹配*/
+		        if(aEle[i].className.search(re) != -1){
+		            aResult.push(aEle[i]);
+		        }
+		    }
+		    return aResult;
+		};
+		//用来判断是否有对商品进行勾选
+		function selectItemDepend(){
+			for(id in data.goods)
+			{
+				if(data.goods[id].check == 1)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		function addMoney() {
+			var amountMoney = document.getElementById("amountMoney");
+			var money_sum = 0;
+			for(id in data.goods)
+			{
+				if(data.goods[id].check == 1)
+				{
+					money_sum += data.goods[id].price * data.goods[id].num;
+				}
+			}
+			amountMoney.innerHTML = money_sum;
+			console.log(money_sum); 
+		}
+		htmlAppend();
+    </script>
+</body>
+</html>
