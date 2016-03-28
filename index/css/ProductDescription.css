@@ -150,7 +150,6 @@ body{
 .graphic_word_detail
 {
     width: 100%;
-    height: 16.0rem;
     position: relative;
 }
 .bottom-button-car
@@ -489,3 +488,9 @@ to {height:3.5rem;}
     font-size: 0.17rem;
 }
 
+.story_iframe
+{
+    width: 100%;
+    height: 16rem;
+    display: block;
+}

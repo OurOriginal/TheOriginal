@@ -125,13 +125,15 @@
 		</div>
         <div class="graphic_word_detail" id="graphic_word_detail">
             <div class="bottom-button" id="button_control">
-            	<div class="item1-1">
+            	<div class="item1-1" onclick="changeFrame(this)" id="0">
                		<span>商品详情</span>      
             	</div>
-            	<div class="item1-2">
+            	<div class="item1-2" onclick="changeFrame(this)" id="1">
                 	<span>品牌故事</span>      
             	</div>
         	</div>
+        	<iframe id="story_iframe" class="story_iframe" src="frame/Brand_Story.html">
+        	</iframe>
         	<div id="element" class="element">
 			</div>
         </div>
@@ -486,5 +488,14 @@
 		}
 		return exports;
 	};
+	function changeFrame(e) {
+		var frame = document.getElementById("story_iframe");
+		var id = e.id;
+		if(id == 0) {
+			frame.src = "frame/Brand_Story.html";
+		} else if(id == 1) {
+			frame.src = "frame/Production_Desctiption_Frame.html"; 
+		}
+	}
 </script>
 </html>
