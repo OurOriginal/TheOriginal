@@ -26,6 +26,8 @@ body
     position: absolute;
     width: 100%;
     margin: 0;
+    text-align: center;
+    font-size:0;
 }
 
 .turn_To_FirstView {
@@ -48,55 +50,93 @@ body
 {
 	position: relative;
 	color: red;
+	margin-top: 0.5rem;
 	width: 100%;
 	height: 1.7rem;
 	text-align: center;
 	font-size: 0.36rem;
-	padding-top: 0.5rem;
+}
+
+.second-title-box
+{
+	display: inline-block;
+	font-size:0;
+	position: relative;
+	width: 7rem;
+	height: 0.65rem;
+	padding-left: 0.8rem;
+	line-height: 0.65rem;
 }
 
 .second-title
 {
 	position: relative;
-	width: 100%;
-	height: 0.65rem;
+	float: left;
 	color: red;
-	padding-left: 0.64rem;
 	font-size: 0.3rem;
+}
+
+.third-title-box
+{
+	display:inline-block;
+	font-size:0;
+	position: relative;
+	width: 7rem;
+	padding-left: 0.8rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
 }
 
 .third-title
 {
 	position: relative;
-	width: 100%;
+	float: left;
 	height: 0.5rem;
-	padding-left: 0.64rem;
 	font-size: 0.28rem;
 	color: black;
 }
 
+.paragraph-box
+{
+	padding-left: 0.8rem;
+	font-size:0;
+	display: inline-block;
+	position: relative;
+	width: 7rem;
+	line-height: 0.5rem;
+	margin-bottom: 0.2rem;	
+}
+
+
 .paragraph
 {
 	color: #b2b2b2;
-	display: block;
 	position: relative;
-	margin-bottom: 0.2rem;
-	width: 100%;
 	text-align: left;
+	float: left;
 	font-size: 0.22rem;
 	line-height: 0.3rem;
 	text-indent: 0.5rem;
-	width: 5.1rem;
-	margin-left: 0.64rem;
+	width: 5.0rem;
 }
+
+.photo_box
+{
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0.1rem;
+	width: 100%;
+	height: 3.3rem;
+	text-align: center;
+}
+
 
 .photo_near_to_photo
 {
 	position: relative;
-	margin-bottom: 0.1rem;
+	display: inline-block;
 	width: 4.4rem;
 	height: 3.3rem;
-	margin-left: 1.0rem;
 }
 
 .bottom-button

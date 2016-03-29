@@ -45,13 +45,23 @@
 				if(json[id].type == 0) {
 					html += '<div class="main-title">' + '<span>'+json[id].text+'</span>' + '</div>';
 				} else if(json[id].type == 1) {
-					html += '<div class="second-title">' + '<span>'+json[id].text+'</span>'+'</div>';
+					html += '<div class="second-title-box">' +
+					'<div class="second-title">' + '<span>'+json[id].text+'</span>'+'</div>' +
+					'</div>';
 				} else if(json[id].type == 2) {
-					html += '<div class="third-title">' + '<span>'+json[id].text+'</span>' +'</div>';
+					html += '<div class="third-title-box">' +
+					'<div class="third-title">' + '<span>'+json[id].text+'</span>' +'</div>' +
+					'</div>';
 				} else if(json[id].type == 3) {
-					html += '<div class="paragraph">' + '<span>' + json[id].text + '</span>' + '</div>';
+					html += '<div class="paragraph-box">' +
+					'<div class="paragraph">' + '<span>' + json[id].text + '</span>' + '</div>' +
+					'</div>';
 				} else if(json[id].type == 4) {
-					html += '<div class="photo_near_to_photo">' + '<img src="'+ json[id].address +'" height="100%" width="100%">' + '</div>';
+					html += '<div class = "photo_box">' + 
+					'<div class="photo_near_to_photo">' + 
+					'<img src="'+ json[id].address +'" height="100%" width="100%">' + 
+					'</div>' +
+					'</div>';
 				}
 			}
 			html += '<div class="bottom-button">' + '<span>' +'立即购买'+'</span>' + '</div>'; 
