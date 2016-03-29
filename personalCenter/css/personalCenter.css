@@ -77,6 +77,14 @@ html
     margin-top: 1rem;
 }
 
+.button_center
+{
+    height: 0.66rem;
+    width: 5.8rem;
+    position: relative;
+    display: inline-block;
+}
+
 .item1
 {
     text-align: center;
@@ -91,7 +99,6 @@ html
     background-color: #d9dada;
     border-radius: 0.15rem;
     box-shadow: 0px 0.03rem 0.01rem 0.01rem #a2a4a4;
-    margin-left: 0.3rem;
 }
 
 .item2
