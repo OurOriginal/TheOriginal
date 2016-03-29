@@ -155,7 +155,7 @@ ul,li {
 .RMB {
 	background: #10D810;
 	border-radius: 20%;
-	font-size: .15rem;
+	font-size: .25rem;
 	color: white;
 	width: 11.51vw;
 
@@ -164,7 +164,7 @@ ul,li {
 /*  底部字样  */
 .footer {
 	background: #fff;
-	font-size: .3506rem;
+	font-size: .25rem;
 	color: rgba(0, 0, 0, 0.31);
 	text-align: center;
 	line-height: 332%;

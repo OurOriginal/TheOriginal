@@ -97,37 +97,37 @@ a {
 	color: rgba(0, 0, 0, 0.49);
 }
 .address > * {
-	font-size: .2rem;
+	font-size: .25rem;
 	line-height: .5rem;
 	height: .5rem;
 }
 .addTitle {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
-	font-size: .2rem;
+	font-size: .25rem;
 	line-height: .5rem;
 	height: .5rem;
 }
 .addName > i {
 	font-style: normal;
-	font-size: .2rem;
+	font-size: .25rem;
 	line-height: .5rem;
 	height: .5rem;
 }
 .addName > .phoneNum{
-	font-size: .2rem;
+	font-size: .25rem;
 	line-height: .5rem;
 	height: .5rem;
 	font-family: Verdana;
 }
 .addMore {
-	font-size: .18rem;
+	font-size: .20rem;
 	line-height: .5rem;
 	height: .5rem;
 	text-align: center;
 	color: rgba(0, 0, 0, 0.22);
 }
 .amount {
-	margin: .18rem .1rem 0;
+	margin: .25rem .1rem 0;
 	background: #FFF;
 	font-size: .2rem;
 	color: rgba(0, 0, 0, 0.49);
@@ -136,14 +136,14 @@ a {
 	line-height: .7rem;
 }
 .amountMoney {
-	font-size: .2rem;
+	font-size: .25rem;
 	color: rgba(0, 0, 0, 0.49);
 	font-family: Verdana;
 }
 .payBtn {
 	margin: 0 .1rem;
 	background: #17BB17;
-	font-size: .35rem;
+	font-size: .30rem;
 	font-family: "Microsoft Yahei";
 	font-weight: bolder;
 	color: white;
@@ -203,14 +203,14 @@ a {
 	padding-right: 25%;
 	padding-bottom: .3rem;
 	font-weight: 400;
-	font-size: .18rem;
+	font-size: 0.25rem;
 }
 .ui-list-item-info p {
 	color: #999;
 	padding-right: 25%;
 	position: relative;
-	font-size: .15rem;
-	line-height: .15rem;
+	font-size: .20rem;
+	line-height: .20rem;
 }
 .stock {
 	height: .45rem;
@@ -281,14 +281,14 @@ a {
 
 .ui-list-item .price span {
 	display: block;
-	font-size: .18rem;
+	font-size: 0.25rem;
 	margin-bottom: .05rem;
 	color: rgba(255, 0, 0, 0.62);
 	text-align: right;
 }
 .ui-list-item .price del {
 	color: #98989f;
-	font-size: .15rem;
+	font-size: 0.1rem;
 	float: right;
 }
 

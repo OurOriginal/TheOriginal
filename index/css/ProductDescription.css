@@ -58,16 +58,16 @@ body{
 .description
 {
     text-align: center;
-	font-size: 0.23rem;
-    color: #6e6e6e;
+	font-size: 0.25rem;
+    color: #000000;
 }
 .price_now
 {
-    font-size: 0.35rem;
+    font-size: 0.25rem;
     width: 100%;
     margin-top: 0.02rem;
     text-align: right;
-    color: #f00;
+    color: #e60012;
 }
 .price_now span
 {
@@ -75,13 +75,13 @@ body{
 }
 .price_market
 {
-    font-size: 0.2rem;
+    font-size: 0.15rem;
 
     width: 100%;
 
     text-align: right;
 
-    color: #aaa;
+    color: #000000;
 }
 .price_market del
 {
@@ -96,14 +96,14 @@ body{
 }
 .detail-title
 {
-    font-size: 0.26rem;
-	color:  gray;
+    font-size: 0.25rem;
+	color:  #000000;
     padding-top: 2%;
     text-align: center;
 }
 .detail-pull
 {
-    font-size: 0.2rem;
+    font-size: 0.20rem;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -122,9 +122,10 @@ body{
 .item1-1
 {
     line-height: 0.85rem;
-	font-size: 0.22rem;
+	font-size: 0.25rem;
     float: left;
-    width: 49.5%;
+    color:#000000;
+    width: 49.4%;
     height: 0.85rem;
     text-align: center;
     border-top: 1px solid;
@@ -137,8 +138,9 @@ body{
 {
     line-height: 0.85rem;
     float: left;
-	font-size: 0.22rem;
-    width: 49.5%;
+    color:#000000;
+	font-size: 0.25rem;
+    width: 49.4%;
     height: 0.85rem;
     text-align: center;
     border-left: 0px solid;
@@ -157,6 +159,7 @@ body{
 	bottom: 0;
     position: relative;
     width: 100%;
+    height: 1.0rem;
     overflow: hidden;
 }
 
@@ -178,23 +181,23 @@ body{
 {
     float: left;
     width: 30%;
-    height: 0.86rem;
+    height: 1.0rem;
     text-align: center;
-	line-height: 0.86rem;
+	line-height: 1.0rem;
     background-color: #382e2b;
 }
 .item2-1 img
 {
-    width: 0.53rem;
-    height: 0.63rem;
+    width: 0.58rem;
+    height: 0.68rem;
 }
 .item2-2
 {
-    line-height: 0.86rem;
+    line-height: 1.0rem;
     float: left;
-	font-size: 0.22rem;
+	font-size: 0.25rem;
     width: 70%;
-    height: 0.86rem;
+    height: 1.0rem;
     text-align: center;
     color: white;
     background-color: #8e3030;
@@ -265,7 +268,7 @@ to {height:3.5rem;}
 
 .name
 {
-    font-size: 0.3rem;
+    font-size: 0.25rem;
     display: block;
     float: top;
     padding-top: 0.1rem;
@@ -274,7 +277,7 @@ to {height:3.5rem;}
 
 .price
 {
-    font-size: 0.2rem;
+    font-size: 0.25rem;
     color:red;
     display: block;
     float: top;
@@ -419,7 +422,7 @@ to {height:3.5rem;}
     position: relative;
     width: 100%;
     height: 0.4rem;
-    color: #f4aaad;
+    color: #e60012;
     margin-top: 0.6rem;
 }
 
@@ -429,7 +432,7 @@ to {height:3.5rem;}
     text-align: center;
     position: relative;
     float: left;
-    font-size: 0.17rem;
+    font-size: 0.20rem;
     width: 50%;
 }
 
@@ -439,13 +442,13 @@ to {height:3.5rem;}
     width: 50%;
     position: relative;
     float: left;
-    font-size: 0.17rem;
+    font-size: 0.20rem;
 }
 
 
 .detail-box2
 {
-    color: #f4aaad;
+    color: #e60012;
     position: relative;
     width: 100%;
     height: 0.4rem;
@@ -458,7 +461,7 @@ to {height:3.5rem;}
     width: 50%;
     position: relative;
     float: left;
-    font-size: 0.17rem;
+    font-size: 0.20rem;
 }
 
 .product_function
@@ -467,7 +470,7 @@ to {height:3.5rem;}
     width: 50%;
     position: relative;
     float: left;
-    font-size: 0.17rem;
+    font-size: 0.20rem;
 }
 
 .detail-box3
@@ -476,7 +479,7 @@ to {height:3.5rem;}
     width: 100%;
     height: 0.4rem;
     margin-top: 0.1rem;
-    color: #f4aaad;
+    color: #e60012;
 }
 
 .save_date
@@ -485,7 +488,7 @@ to {height:3.5rem;}
     width: 50%;
     position: relative;
     float: left;
-    font-size: 0.17rem;
+    font-size: 0.20rem;
 }
 
 .story_iframe
