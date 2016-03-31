@@ -328,7 +328,17 @@ to {height:3.5rem;}
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 0.8rem;
+    height: 1rem;
+}
+
+.ok-button
+{
+    width: 100%;
+    height: 1rem;
+    font-size: 0.25rem;
+    background-color: #8e3030;
+    line-height: 100%;
+    color: white;
 }
 
 .standard-title
@@ -408,14 +418,6 @@ to {height:3.5rem;}
     margin: 0px;
 }
 
-.ok-button
-{
-    width: 100%;
-    height: 0.7rem;
-    background-color: #8e3030;
-    line-height: 100%;
-    color: white;
-}
 
 .detail-box1
 {
