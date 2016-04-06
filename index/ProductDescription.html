@@ -249,8 +249,20 @@
             buttonLine.style.position = "relative";
         }   
     });
-
-
+    /*切换Frame的Tab事件*/
+	function changeFrame(e) {
+		var scrollHeight = document.body.scrollTop;
+		var frame = document.getElementById("story_iframe");
+		var id = e.id;
+		if(scrollHeight < addHeight) {
+			document.body.scrollTop = addHeight;	
+		}
+		if(id == 0) {
+			frame.src = "frame/Brand_Story.html";
+		} else if(id == 1) {
+			frame.src = "frame/Production_Desctiption_Frame.html"; 
+		}
+	}
 
     /*模态框的实现*/
     function openNewDiv() {
@@ -488,14 +500,6 @@
 		}
 		return exports;
 	};
-	function changeFrame(e) {
-		var frame = document.getElementById("story_iframe");
-		var id = e.id;
-		if(id == 0) {
-			frame.src = "frame/Brand_Story.html";
-		} else if(id == 1) {
-			frame.src = "frame/Production_Desctiption_Frame.html"; 
-		}
-	}
+
 </script>
 </html>
