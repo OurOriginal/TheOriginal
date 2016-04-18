@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="company" content="广州原真原电子商务有限公司">
+<meta name="keywords" content="土特产，饮食，健康，文化，品质，保真">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection"  content="telephone=no">
+<meta name="format-detection" content="email=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>源真原味商品资讯</title>
+<link rel="stylesheet" type="text/css" href="css/normal.css">
+<link rel="stylesheet" type="text/css" href="css/productionStory.css">
+</head>
+	<body>
+    	<div class="turn_To_FirstView">
+			<span>首页</span>
+		</div>
+	    <div class="main" id="main">
+	    </div>
+	</body>
+	<script type="text/javascript">
+		var data = {
+			//type{0:main-title,1:second-title,2:third-title,3:paragraph,4:photo}
+        	content: {
+				"000000": { type:0, text: "玫瑰花的故事"},
+				"000001": { type:1, text: "玫瑰花功效"},
+				"000002": { type:3, text: "中医认为，玫瑰花味甘微苦、性温，最明显的功效就是理气解郁、活血散淤和调经止痛。此外，玫瑰花的药性非常温和，能够温养人的心肝血脉，舒发体内郁气，起到镇静、安抚、抗抑郁的功效。女性在月经前或月经期间常会有些情绪上的烦躁，脸色黯淡，甚至是痛经等症状，喝点玫瑰花可以起到调节作用。"},
+				"000003": { type:3, text: "在工作和生活压力越来越大的今天，即使不是月经期，也可以多喝点玫瑰花，安抚、稳定情绪。对于女性来说，玫瑰花喝多了，还可以让自己的脸色同花瓣一样变得红润起来。这是因为玫瑰花有很强的行气活血、化淤、调和脏腑的作用。我们平时所说的脸色不好或脸上长斑、月经失调、痛经等症状，都和气血运行失常，淤滞于子宫或面部有关。一旦气血运行正常了，自然就会面色红润。要想达到这种效果。"},
+				"000004": { type:1, text: "具体做法"},
+				"000005": { type:3, text: "每天坚持取玫瑰花15克泡水喝。气虚者可加入大枣3—5枚，或西洋参9克；肾虚者可加入枸杞子15克。泡玫瑰花的时候，可以根据口味，调入冰糖（可以润肺）或蜂蜜（可以通便），以减少玫瑰花的涩味和加强功效。需要提醒的是，玫瑰花最好不要与茶叶泡在一起喝。因为茶叶中有大量鞣酸，会影响玫瑰花舒肝解郁的功效。此外，由于玫瑰花活血散淤的作用比较强，月经量过多的人在经期最好不要饮用。"},
+				"000006": { type:1, text: "玫瑰花赏析"},
+				"000007": { type:4, address:"images/玫瑰花1.jpg"},
+				"000008": { type:4, address:"images/玫瑰花2.jpg"},
+				"000009": { type:4, address:"images/玫瑰花3.jpg"},
+				"000010": { type:1, text: "三招教您挑选干玫瑰"},
+				"000011": { type:3, text: " 1.玫瑰花瓣上有水溶性的天然颜色，鲜花退色快，烘干的花蕾泡水，退色慢点，水的温度越高，花的颜色退得越快。裉色是正常的现象！市面卖上的玫瑰花蕾中，有相当部分是加了硫磺的，主要原因是为了能长时间放置，花的颜色不褪变，一般来讲以颜色自然为准，过于鲜艳漂亮反而有害！"},
+				"000012": { type:3, text: " 2.含硫玫瑰花茶，色泽鲜艳。无硫花茶颜色自然。含硫玫瑰花茶味道平淡，无硫花茶醇香自然。"},
+				"000013": { type:3, text: " 3.如果泡出蓝色或红色的茶水，估计含有不明物质，正常的玫瑰花茶水是淡黄色或黄色！"}
+			}
+		};
+
+
+		function htmlList() {
+			var json = data.content, html = "";
+			for (id in json) {
+				if(json[id].type == 0) {
+					html += '<div class="main-title">' + '<span>'+json[id].text+'</span>' + '</div>';
+				} else if(json[id].type == 1) {
+					html += '<div class="second-title-box">' +
+					'<div class="second-title">' + '<span>'+json[id].text+'</span>'+'</div>' +
+					'</div>';
+				} else if(json[id].type == 2) {
+					html += '<div class="third-title-box">' +
+					'<div class="third-title">' + '<span>'+json[id].text+'</span>' +'</div>' +
+					'</div>';
+				} else if(json[id].type == 3) {
+					html += '<div class="paragraph-box">' +
+					'<div class="paragraph">' + '<span>' + json[id].text + '</span>' + '</div>' +
+					'</div>';
+				} else if(json[id].type == 4) {
+					html += '<div class = "photo_box">' + 
+					'<div class="photo_near_to_photo">' + 
+					'<img src="'+ json[id].address +'" height="100%" width="100%">' + 
+					'</div>' +
+					'</div>';
+				}
+			}
+			html += '<div class="bottom-button">' + '<span>' +'立即购买'+'</span>' + '</div>'; 
+			return html;
+		}
+
+		function htmlAppend() {
+			get("main").innerHTML = this.htmlList();
+			return this;
+		}
+		function get(id) {
+			return document.getElementById(id);
+		}
+		htmlAppend();
+	</script>
+</html>
