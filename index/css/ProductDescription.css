@@ -423,7 +423,7 @@ to {height:3.5rem;}
 {
     position: relative;
     width: 100%;
-    height: 0.4rem;
+    height: 0.5rem;
     color: #e60012;
     margin-top: 0.6rem;
 }
@@ -431,19 +431,21 @@ to {height:3.5rem;}
 
 .product_name
 {
-    text-align: center;
     position: relative;
     float: left;
     font-size: 0.20rem;
     width: 50%;
+    display: block;
+    height: 0.5rem;
 }
 
 .product_size
 {
-    text-align: center;
     width: 50%;
     position: relative;
     float: left;
+    height: 0.5rem;
+    display: block;
     font-size: 0.20rem;
 }
 
@@ -453,14 +455,15 @@ to {height:3.5rem;}
     color: #e60012;
     position: relative;
     width: 100%;
-    height: 0.4rem;
+    height: 0.5rem;
     margin-top: 0.1rem;
 }
 
 .product_original
 {
-    text-align: center;
+    height: 0.5rem;
     width: 50%;
+    display: block;
     position: relative;
     float: left;
     font-size: 0.20rem;
@@ -468,7 +471,8 @@ to {height:3.5rem;}
 
 .product_function
 {
-    text-align: center;
+    height: 0.5rem;
+    display: block;
     width: 50%;
     position: relative;
     float: left;
@@ -479,15 +483,16 @@ to {height:3.5rem;}
 {
     position: relative;
     width: 100%;
-    height: 0.4rem;
+    height: 0.5rem;
     margin-top: 0.1rem;
     color: #e60012;
 }
 
 .save_date
 {
-    text-align: center;
+    height: 0.5rem;
     width: 50%;
+    display: block;
     position: relative;
     float: left;
     font-size: 0.20rem;
@@ -498,4 +503,23 @@ to {height:3.5rem;}
     width: 100%;
     height: 16rem;
     display: block;
+}
+
+.key_box
+{
+    display: inline-block;
+    position: absolute;
+    margin-left: 0.4rem;
+}
+
+.value_box
+{
+    display: inline-block;
+    position: absolute;
+    margin:0;
+    padding:0;
+    color:gray;
+    width: 1.3rem;
+    right: 0;
+    height: 0.5rem;
 }

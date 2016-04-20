@@ -76,7 +76,7 @@ html {
 	margin-top: .18rem;
 	padding: 0 .27rem;
 	background: #fff;
-	height: 2.3rem;
+	height: 3rem;
 	color: rgba(0, 0, 0, 0.49);
 	position: relative;
 }
@@ -84,11 +84,18 @@ html {
 	line-height: .52rem;
 	height: .52rem;
 }
-.revName,.revPhoneNum,.revAdd{
+.revName,.revPhoneNum{
 	font-size: .25rem;
 	line-height: .7rem;
 	height: .52rem;
 }
+
+.revAdd {
+	font-size: .25rem;
+	height: 1.1rem;
+	line-height: .7rem;
+}
+
 .revTitle {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
 	position: relative;
@@ -128,6 +135,17 @@ html {
 	line-height: 5.08vh;
 	height: 5.08vh;
 }
+
+.revAdd > span {
+	display: inline-table;
+	font-style: normal;
+	font-size: .25rem;
+	height: .82rem;
+	width: 4.6rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 /*.revPhoneNum > .phoneNum{
 	font-size: .25rem;
 	line-height: 5.08vh;
